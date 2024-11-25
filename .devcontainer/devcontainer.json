@@ -1,0 +1,16 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+  }
+}
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--privileged",
+    "--cgroupns=host",
+    "-v", "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  ],
+  "overrideCommand": false
+}
