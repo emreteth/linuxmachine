@@ -1,11 +1,6 @@
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get install -y \
-    systemd \
-    systemd-sysv \
-    dbus \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+# Gerekli araçları yükle
+RUN apt-get update && apt-get install -y systemd dbus
 
-VOLUME [ "/sys/fs/cgroup" ]
-
-CMD ["/sbin/init"]
+CMD ["/bin/bash"]
